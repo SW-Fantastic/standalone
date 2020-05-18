@@ -1,1 +1,5 @@
 /ice-registr/target/
+/kxml2/target/
+/kxml2/.idea/
+/ice-registr/.idea/
+/.idea/

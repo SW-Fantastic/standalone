@@ -5,6 +5,7 @@
 ## 现有项目
 
 com.ice.jni.registry：用于操作windows注册表的API，现在是org.swdc.extern.ice。
+org.kxml2 ：xml的api，包含xmlpull和kxml2两部分。
 
 ## 使用方法
 

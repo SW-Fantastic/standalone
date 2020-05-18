@@ -6,3 +6,22 @@
 ## 如何使用
 
 请clone此仓库并install到本地，然后通过maven使用它。
+
+或者使用maven：
+在pom添加此节点。
+```xml
+<repositories>
+	<repository>
+	    <id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+</repositories>
+```
+然后添加此依赖项：
+```xml
+<dependency>
+    <groupId>com.github.SW-Fantastic</groupId>
+	<artifactId>standalone</artifactId>
+	<version>v0.1</version>
+</dependency>
+```
