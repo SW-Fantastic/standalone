@@ -20,7 +20,10 @@
 
 package org.kxml2.kdom;
 
-import org.xmlpull.v1.*;
+import org.kxml2.xmlpull.XmlPullParser;
+import org.kxml2.xmlpull.XmlPullParserException;
+import org.kxml2.xmlpull.XmlSerializer;
+import org.kxml2.xmlpull.*;
 
 import java.io.IOException;
 import java.util.Vector;

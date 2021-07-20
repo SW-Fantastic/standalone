@@ -1,4 +1,4 @@
-package org.xmlpull.v1;
+package org.kxml2.xmlpull;
 
 import java.io.IOException;
 import java.io.OutputStream;

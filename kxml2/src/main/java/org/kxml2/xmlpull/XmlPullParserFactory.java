@@ -1,7 +1,7 @@
 /* -*-             c-basic-offset: 4; indent-tabs-mode: nil; -*-  //------100-columns-wide------>|*/
 // for license please see accompanying LICENSE.txt file (available also at http://www.xmlpull.org/)
 
-package org.xmlpull.v1;
+package org.kxml2.xmlpull;
 
 import java.io.InputStream;
 import java.util.Enumeration;
@@ -26,7 +26,7 @@ import java.util.Vector;
  * <code>System.getProperty(XmlPullParserFactory.PROPERTY_NAME)</code>
  * and second is <code>Thread.getContextClassLoader().getClass()</code> .
  *
- * @see org.xmlpull.v1.XmlPullParser
+ * @see XmlPullParser
  *
  * @author <a href="http://www.extreme.indiana.edu/~aslom/">Aleksander Slominski</a>
  * @author Stefan Haustein
@@ -116,7 +116,7 @@ public class XmlPullParserFactory {
      */
 
     public void setNamespaceAware(boolean awareness) {
-        features.put (org.xmlpull.v1.XmlPullParser.FEATURE_PROCESS_NAMESPACES, new Boolean (awareness));
+        features.put (XmlPullParser.FEATURE_PROCESS_NAMESPACES, new Boolean (awareness));
     }
 
     /**
@@ -129,7 +129,7 @@ public class XmlPullParserFactory {
      */
 
     public boolean isNamespaceAware() {
-        return getFeature (org.xmlpull.v1.XmlPullParser.FEATURE_PROCESS_NAMESPACES);
+        return getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES);
     }
 
 
@@ -143,7 +143,7 @@ public class XmlPullParserFactory {
      */
 
     public void setValidating(boolean validating) {
-        features.put (org.xmlpull.v1.XmlPullParser.FEATURE_VALIDATION, new Boolean (validating));
+        features.put (XmlPullParser.FEATURE_VALIDATION, new Boolean (validating));
     }
 
     /**
@@ -155,7 +155,7 @@ public class XmlPullParserFactory {
      */
 
     public boolean isValidating() {
-        return getFeature (org.xmlpull.v1.XmlPullParser.FEATURE_VALIDATION);
+        return getFeature (XmlPullParser.FEATURE_VALIDATION);
     }
 
     /**
@@ -167,7 +167,7 @@ public class XmlPullParserFactory {
      * requested configuration.
      */
 
-    public org.xmlpull.v1.XmlPullParser newPullParser() throws XmlPullParserException {
+    public XmlPullParser newPullParser() throws XmlPullParserException {
 
         if (parserClasses == null) throw new XmlPullParserException
                 ("Factory initialization was incomplete - has not tried "+classNamesLocation);
@@ -180,7 +180,7 @@ public class XmlPullParserFactory {
         for (int i = 0; i < parserClasses.size (); i++) {
             final Class ppClass = (Class) parserClasses.elementAt (i);
             try {
-                final org.xmlpull.v1.XmlPullParser pp = (org.xmlpull.v1.XmlPullParser) ppClass.getConstructor().newInstance();
+                final XmlPullParser pp = (XmlPullParser) ppClass.getConstructor().newInstance();
                 for (Enumeration e = features.keys (); e.hasMoreElements ();) {
                     final String key = (String) e.nextElement();
                     final Boolean value = (Boolean) features.get(key);
@@ -209,7 +209,7 @@ public class XmlPullParserFactory {
      * requested configuration.
      */
 
-    public org.xmlpull.v1.XmlSerializer newSerializer() throws XmlPullParserException {
+    public XmlSerializer newSerializer() throws XmlPullParserException {
 
         if (serializerClasses == null) {
             throw new XmlPullParserException
@@ -225,7 +225,7 @@ public class XmlPullParserFactory {
         for (int i = 0; i < serializerClasses.size (); i++) {
             final Class ppClass = (Class) serializerClasses.elementAt (i);
             try {
-                final org.xmlpull.v1.XmlSerializer ser = (org.xmlpull.v1.XmlSerializer) ppClass.getConstructor().newInstance();
+                final XmlSerializer ser = (XmlSerializer) ppClass.getConstructor().newInstance();
                 return ser;
             } catch(Exception ex) {
                 issues.append (ppClass.getName () + ": "+ ex.toString ()+"; ");

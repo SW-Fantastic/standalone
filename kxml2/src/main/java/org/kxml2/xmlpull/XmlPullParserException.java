@@ -1,9 +1,7 @@
 /* -*-             c-basic-offset: 4; indent-tabs-mode: nil; -*-  //------100-columns-wide------>|*/
 // for license please see accompanying LICENSE.txt file (available also at http://www.xmlpull.org/)
 
-package org.xmlpull.v1;
-
-import org.xmlpull.v1.XmlPullParser;
+package org.kxml2.xmlpull;
 
 /**
  * This exception is thrown to signal XML Pull Parser related faults.

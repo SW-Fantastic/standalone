@@ -22,7 +22,8 @@
 
 package org.kxml2.wap;
 
-import org.xmlpull.v1.*;
+import org.kxml2.xmlpull.XmlSerializer;
+import org.kxml2.xmlpull.*;
 
 import java.io.*;
 import java.util.Hashtable;
