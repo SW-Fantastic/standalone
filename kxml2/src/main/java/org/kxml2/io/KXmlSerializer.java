@@ -22,7 +22,6 @@
 package org.kxml2.io;
 
 import org.kxml2.xmlpull.XmlSerializer;
-import org.kxml2.xmlpull.*;
 
 import java.io.IOException;
 import java.io.OutputStream;
