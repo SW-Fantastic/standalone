@@ -4,5 +4,6 @@ module kxml2 {
     exports org.kxml2.kdom;
     exports org.kxml2.wap.wml;
     exports org.kxml2.wap.wv;
+
     exports org.kxml2.xmlpull;
 }

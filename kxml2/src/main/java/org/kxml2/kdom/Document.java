@@ -24,7 +24,6 @@ package org.kxml2.kdom;
 import org.kxml2.xmlpull.XmlPullParser;
 import org.kxml2.xmlpull.XmlPullParserException;
 import org.kxml2.xmlpull.XmlSerializer;
-import org.kxml2.xmlpull.*;
 
 import java.io.IOException;
 
