@@ -6,6 +6,8 @@
 
     <groupId>org.swdc</groupId>
     <artifactId>standalones</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
 
 </project>
