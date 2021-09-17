@@ -5,12 +5,17 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 public class PlatformLoader {
 
     public void load(File desc) {
         try {
+
+            Path pathRoot = desc.toPath().getParent();
+
             SAXReader saxReader = new SAXReader();
             Document document = saxReader.read(desc);
 
@@ -39,11 +44,14 @@ public class PlatformLoader {
 
             List<Element> deps = platformElem.elements("dependency");
             for (Element dep: deps) {
-                File depFile = new File(dep.attribute("path").getText());
+                File depFile = pathRoot.resolve(Paths.get(dep.attribute("path").getText())).toFile();
                 System.load(depFile.getAbsolutePath());
             }
 
-            File mainModule = new File(platformElem.attribute("path").getText());
+            File mainModule = pathRoot.
+                    resolve(Paths.get(platformElem.attribute("path").getText()))
+                    .toFile();
+
             System.load(mainModule.getAbsolutePath());
 
         } catch (Exception e) {
