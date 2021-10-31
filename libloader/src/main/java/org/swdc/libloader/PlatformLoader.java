@@ -1,10 +1,12 @@
 package org.swdc.libloader;
 
 import org.dom4j.Document;
+import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -63,8 +65,8 @@ public class PlatformLoader {
 
             System.load(mainModule.getAbsolutePath());
 
-        } catch (Exception e) {
-
+        } catch (DocumentException e) {
+            e.printStackTrace();
         }
     }
 
