@@ -6,7 +6,7 @@
 
         <!-- jni的链接库文件，name填写为系统的name ， Path是以本文件所在的目录为基础的相对路径，
              例如：windows即本文件的文件夹下应有window文件夹。-->
-        <platform name="windows" path="windows/libWkHtmlPDF.dll">
+        <platform name="windows" arch="x64" path="windows/libWkHtmlPDF.dll">
             <!-- 被JNI的链接库封装的类库，在这里按照加载顺序依次添加 -->
             <dependency path="windows/libwinpthread-1.dll" />
             <dependency path="windows/libgcc_s_seh-1.dll" />

@@ -25,12 +25,21 @@ public class PlatformLoader {
             List<Element> platformList = platforms.elements("platform");
             String osName = System.getProperty("os.name").trim().toLowerCase();
 
+            String osArch = System.getProperty("os.arch");
+
             Element platformElem = null;
 
             for (Element element: platformList) {
                 String name = element.attribute("name").getValue();
                 if (osName.contains(name.toLowerCase())) {
-                    platformElem = element;
+                    String arch = element.attributeValue("arch");
+                    if (arch != null && arch.equals(osArch)) {
+                        platformElem = element;
+                    } else if (arch == null || arch.isEmpty()) {
+                        platformElem = element;
+                    } else {
+                        System.err.println("native lib was found but can not get a suitable one for your arch : " + osArch);
+                    }
                     break;
                 }
             }
