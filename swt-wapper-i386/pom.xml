@@ -18,12 +18,17 @@
         <!-- 包含swt的第三方仓库 -->
         <repository>
             <id>maven-eclipse-repo</id>
-            <url>http://maven-eclipse.github.io/maven</url>
+            <url>https://maven-eclipse.github.io/maven</url>
         </repository>
         <!-- 包含jface的第三方仓库 -->
         <repository>
             <id>Jabylon-Plugin---</id>
-            <url>http://www.jabylon.org/maven/</url>
+            <url>https://www.jabylon.org/maven/</url>
+        </repository>
+        <repository>
+            <id>in-project</id>
+            <name>In project repo</name>
+            <url>file://${project.basedir}/../swtlibs/</url>
         </repository>
     </repositories>
 
@@ -38,19 +43,16 @@
             <groupId>org.eclipse.swt</groupId>
             <artifactId>org.eclipse.swt.win32.win32.x86</artifactId>
             <version>${swt.version}</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.swt</groupId>
             <artifactId>org.eclipse.swt.gtk.linux.x86</artifactId>
             <version>${swt.version}</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.swt</groupId>
             <artifactId>org.eclipse.swt.cocoa.macosx.x86_64</artifactId>
             <version>${swt.version}</version>
-            <scope>compile</scope>
         </dependency>
 
         <!-- 导入jface -->
@@ -64,19 +66,16 @@
             <groupId>org.eclipse.equinox</groupId>
             <artifactId>common</artifactId>
             <version>3.6.200</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.ui</groupId>
             <artifactId>forms</artifactId>
             <version>3.6.1</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.ui</groupId>
             <artifactId>workbench</artifactId>
             <version>3.105.1</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse</groupId>
