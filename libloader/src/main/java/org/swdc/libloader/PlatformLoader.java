@@ -9,9 +9,14 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 
 public class PlatformLoader {
+
+    private static List<String> arch64 = Arrays.asList(
+            "amd64","x64","x86_64"
+    );
 
     public void load(File desc) {
         try {
@@ -28,6 +33,9 @@ public class PlatformLoader {
             String osName = System.getProperty("os.name").trim().toLowerCase();
 
             String osArch = System.getProperty("os.arch");
+            if (arch64.contains(osArch.toLowerCase())) {
+                osArch = "x64";
+            }
 
             Element platformElem = null;
 
