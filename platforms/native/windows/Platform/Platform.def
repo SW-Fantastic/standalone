@@ -1,0 +1,5 @@
+LIBRARY "Platforms"
+EXPORTS
+Java_org_swdc_platforms_WindowsBinaryUtils_dllRegisterServer
+Java_org_swdc_platforms_WindowsBinaryUtils_dllUnRegisterServer
+Java_org_swdc_platforms_WindowsBinaryUtils_getSystemDNSAddress
