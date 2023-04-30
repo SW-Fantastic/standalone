@@ -45,6 +45,9 @@
 //
 package com.lizardtech.djvu;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.lang.reflect.*;
 import java.net.URL;
@@ -75,6 +78,8 @@ public class DjVuObject
   
   /** This method will be used to read references. */
   private static final Method       getMethod;
+
+  private static final Logger logger = LoggerFactory.getLogger(DjVuObject.class);
 
   static
   {
@@ -109,14 +114,12 @@ public class DjVuObject
     exp.printStackTrace(DjVuOptions.err);    
   }
   
-  public static void verbose(final String message)
-  {
-    DjVuOptions.out.println(message);    
+  public static void verbose(final String message) {
+    logger.info(message);
   }
   
-  public static void logError(final String message)
-  {
-    DjVuOptions.err.println(message);    
+  public static void logError(final String message) {
+    logger.error(message);
   }
   
   /**
@@ -229,14 +232,11 @@ public class DjVuObject
         retval = (DjVuInterface)defaultClass.newInstance();
       }
       retval.setDjVuOptions(options);
-    }
-    catch(final InstantiationException exp)
-    {
+    } catch(final InstantiationException exp) {
+      logger.error("exception: ",exp);
       exp.printStackTrace(DjVuOptions.err);
-    }
-    catch(final IllegalAccessException exp)
-    {
-      exp.printStackTrace(DjVuOptions.err);
+    } catch(final IllegalAccessException exp) {
+      logger.error("exception: ",exp);
     }
 
     return retval;
@@ -312,11 +312,11 @@ public class DjVuObject
     }
     catch(final IllegalAccessException exp) 
     {
-      exp.printStackTrace(DjVuOptions.err);
+      logger.error("exception: ",exp);
     }
     catch(final InvocationTargetException exp) 
     {
-      exp.printStackTrace(DjVuOptions.err);
+      logger.error("exception: ",exp);
     }
     return retval;
   }
@@ -329,7 +329,7 @@ public class DjVuObject
         try { 
             throw new Exception("lock held for "+t+" ms"); 
         } catch(final Throwable exp) {
-            exp.printStackTrace(DjVuOptions.err);
+          logger.error("exception: ",exp);
         }
     }
   }
