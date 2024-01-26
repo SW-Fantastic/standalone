@@ -3,3 +3,9 @@
 /kxml2/.idea/
 /ice-registr/.idea/
 /.idea/
+/javadjvu/target/
+/platforms/target/
+/platforms/native/windows/Platform/x64/
+/platforms/native/windows/Platform/.vs/
+/platforms/screen-capture-recorder-x64.dll
+/platforms/Platform.dll
